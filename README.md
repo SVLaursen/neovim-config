@@ -15,3 +15,7 @@ When you first set up the configuration, open a Neovim session and enter:
 ```
 
 After a little second or two all dependencies should be installed and you're ready to go!
+
+## Theme
+
+As mentioned, I have a huge weakness for the Gruvbox theme style, so I've therefore decided to use [ellisonleao's gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim)
