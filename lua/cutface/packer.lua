@@ -13,6 +13,16 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- Terminal toggle
+    use {
+        's1n7ax/nvim-terminal',
+        config = function()
+            vim.o.hidden = true
+            require('nvim-terminal').setup()
+        end,
+    }
+
+  -- Theme
   use({
       'ellisonleao/gruvbox.nvim',
       as = 'gruvbox',
