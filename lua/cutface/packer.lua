@@ -22,21 +22,24 @@ return require('packer').startup(function(use)
         end,
     }
 
-  -- Theme
-  use{
-      'ellisonleao/gruvbox.nvim',
-      --as = 'gruvbox',
---     config = function()
- --        vim.command('colorscheme gruvbox')
---     end
-  }
+  -- Theme -> Gruvbox
+  use{'ellisonleao/gruvbox.nvim'}
 
+  -- Treesitter setup
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   use('nvim-treesitter/playground')
+
+  -- Harpoon setup
   use('theprimeagen/harpoon')
+  -- Undotree setup
   use('mbbill/undotree')
+  -- VimFugitive setup
   use('tpope/vim-fugitive')
 
+  -- Autoclose setup
+  use('windwp/nvim-autopairs')
+
+  -- LSP -> lsp-zero setup
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
