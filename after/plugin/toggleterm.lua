@@ -25,11 +25,6 @@ local opts = { noremap = true, silent = true }
 keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", opts)
 keymap("n", "<leader>tg", "<cmd>lua _toggle_term()<CR>", opts)
 
--- Custom Commands
--- TODO: Add in custom commands for opening the terminal as float, vertical or tray
--- TODO: Add in custom commands for opening additional terminals?
---vim.api.nvim_add_user_command('tf', function(opts) end, { nargs = 1 })
-
 -- ToggleTerm built-in keymaps (do not alter)
 function _G.set_terminal_keymaps()
     local opts = {buffer = 0}
