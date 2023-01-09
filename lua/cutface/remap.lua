@@ -1,35 +1,78 @@
+local opts = { noremap = true, silent = true }
+
+-- Shorthand
+local keymap = vim.api.nvim_set_keymap
+local setmap = vim.keymap.set
+
+-- Leader key setup
+keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- Back out into file directory
+local status_ok, _ = pcall(require, "nvim-tree")
+if not status_ok then
+    setmap("n", "<leader>pv", vim.cmd.Ex) -- If nvim-tree is not installed then use default
+else
+    keymap("n", "<leader>pv", ":NvimTreeToggle<Enter>", opts)
+end
+
+-- Note: I don't think I use these, maybe I should just remove them?
+setmap("v", "J", ":m '>+1<CR>gv=gv")
+setmap("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Move text up and down
+keymap("n", "<leader>/j", "<Esc>:m .+1<CR>", opts)
+keymap("n", "<leader>/k", "<Esc>:m .-2<CR>", opts)
+
+-- Delete space between lines
+setmap("n", "J", "mzJ`z")
+
+-- Fast navigate up/down
+setmap("n", "<C-u>", "<C-d>zz")
+setmap("n", "<C-d>", "<C-u>zz")
+
+setmap("n", "n", "nzzzv")
+setmap("n", "N", "Nzzzv")
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+setmap("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+setmap({"n", "v"}, "<leader>y", [["+y]]) -- Yank block
+setmap("n", "<leader>Y", [["+Y]]) -- Yank entire line
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+setmap({"n", "v"}, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
-vim.keymap.set("i", "<C-c>", "<Esc>")
+setmap("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+-- Nope out of Q
+setmap("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- Lint/Format Current Document
+setmap("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+--vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+--vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+setmap("n", "<leader>k", "<cmd>lnext<CR>zz")
+setmap("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+setmap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Window movement remaps
+setmap("n", "<C-l>", "<C-w>l") -- Move to left window
+setmap("n", "<C-h>", "<C-w>h") -- Move to right window
+setmap("n", "<C-j>", "<C-w>j") -- Move to below window
+setmap("n", "<C-k>", "<C-w>k") -- Move to above window
+
+-- Visual Block -> Move text up and down
+keymap("x", "J", ":m '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":m '<-2<CR>gv-gv", opts)

@@ -7,23 +7,35 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Impatient.nvim configuration
+  use 'lewis6991/impatient.nvim'
+
+  -- Telescope
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+	  'nvim-telescope/telescope.nvim', branch = '0.1.x',
+	  requires = {
+          {'nvim-lua/plenary.nvim'},
+          "BurntSushi/ripgrep",
+          "nvim-tree/nvim-web-devicons"
+      }
   }
 
-  -- Terminal toggle
-    use {
-        's1n7ax/nvim-terminal',
-        config = function()
-            vim.o.hidden = true
-            require('nvim-terminal').setup()
-        end,
-    }
+  use('nvim-telescope/telescope-fzy-native.nvim')
+
+  -- Lualine -> Better control line
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opts = true }
+  }
 
   -- Theme -> Gruvbox
-  use{'ellisonleao/gruvbox.nvim'}
+  use({
+      'eddyekofo94/gruvbox-flat.nvim',
+      as = 'gruvbox-flat',
+      config = function()
+          --vim.cmd("colorscheme gruvbox-flat")
+      end
+  })
 
   -- Treesitter setup
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
@@ -38,6 +50,15 @@ return require('packer').startup(function(use)
 
   -- Autoclose setup
   use('windwp/nvim-autopairs')
+
+  -- NeoTree setup
+ use{
+     'nvim-tree/nvim-tree.lua',
+     requires = {
+         'nvim-tree/nvim-web-devicons',
+     },
+     tag = 'nightly'
+ }
 
   -- LSP -> lsp-zero setup
   use {
@@ -60,6 +81,20 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
 	  }
+  }
+
+  -- Fidget: LSP Progress Indicator
+  use("j-hui/fidget.nvim")
+
+  -- ToggleTerm - Terminal for Neovim
+  use {
+      "akinsho/toggleterm.nvim",
+      tag = '*'
+  }
+
+  use {
+      'lewis6991/gitsigns.nvim',
+      tag = 'release'
   }
 
   use("folke/zen-mode.nvim")
