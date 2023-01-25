@@ -63,8 +63,9 @@ return require('packer').startup(function(use)
   -- LSP -> lsp-zero setup
   use {
 	  'VonHeikemen/lsp-zero.nvim',
+      branch = 'v1.x',
 	  requires = {
-		  -- LSP Support
+          -- LSP Support
 		  {'neovim/nvim-lspconfig'},
 		  {'williamboman/mason.nvim'},
 		  {'williamboman/mason-lspconfig.nvim'},
@@ -98,6 +99,6 @@ return require('packer').startup(function(use)
   }
 
   use("folke/zen-mode.nvim")
-  use("github/copilot.vim")
+  --use("github/copilot.vim")
 
 end)

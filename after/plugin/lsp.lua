@@ -4,7 +4,6 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
-  'eslint',
   'sumneko_lua',
   'rust_analyzer'
 })
@@ -62,3 +61,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true,
+})
