@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
   }
 
   -- Fidget: LSP Progress Indicator
-  use("j-hui/fidget.nvim")
+--  use("j-hui/fidget.nvim")
 
   -- ToggleTerm - Terminal for Neovim
   use {
