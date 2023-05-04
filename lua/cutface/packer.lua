@@ -84,9 +84,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- Fidget: LSP Progress Indicator
-    --  use("j-hui/fidget.nvim")
-
     -- ToggleTerm - Terminal for Neovim
     use {
         "akinsho/toggleterm.nvim",
@@ -98,7 +95,9 @@ return require('packer').startup(function(use)
         tag = 'release'
     }
 
-    use("folke/zen-mode.nvim")
+    -- Markdown previewer (Peek) (requires Deno)
+    use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+
     --use("github/copilot.vim")
 
     -- TODO COMMENTS

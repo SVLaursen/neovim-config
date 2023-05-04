@@ -185,6 +185,11 @@ _G.packer_plugins = {
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["peek.nvim"] = {
+    loaded = true,
+    path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/peek.nvim",
+    url = "https://github.com/toppair/peek.nvim"
+  },
   playground = {
     loaded = true,
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/playground",
@@ -230,11 +235,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["zen-mode.nvim"] = {
-    loaded = true,
-    path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

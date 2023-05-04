@@ -36,5 +36,5 @@ This theme is specifically very nice on the eyes, even after multiple hours of s
 | mbbill/undotree | QoL | |
 | windwp/nvim-autopairs | QoL | |
 | nvim-neo-tree/neo-tree.nvim | Visuals | |
-| j-hui/fidget.nvim | Visuals | |
+| peek.nvim | QoL | Markdown previewer |
 
