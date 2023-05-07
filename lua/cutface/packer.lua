@@ -28,14 +28,8 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opts = true }
     }
 
-    -- Theme -> Gruvbox
-    use({
-        'eddyekofo94/gruvbox-flat.nvim',
-        as = 'gruvbox-flat',
-        config = function()
-            --vim.cmd("colorscheme gruvbox-flat")
-        end
-    })
+    -- Theme -> Catpuccin Mocha
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- Treesitter setup
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
