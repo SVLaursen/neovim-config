@@ -1,2 +1,6 @@
 Start Leaping Downwards | s |
 Start Leaping Upwards | S |
+Line Comment Selected | gc |
+Block Comment Select | gb |
+Toggle Line Comment Select | gcc |
+Toggle Block Comment Selected | gbc |
