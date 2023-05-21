@@ -30,6 +30,7 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+-- Leader mapping
 vim.g.mapleader = " "
 
 
