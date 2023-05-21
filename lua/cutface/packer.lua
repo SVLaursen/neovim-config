@@ -107,4 +107,26 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Better commenting
+    use 'numToStr/Comment.nvim'
+
+    -- HLSLens
+    use 'kevinhwang91/nvim-hlslens'
+
+    -- Leap movements
+    use {
+        'ggandor/leap.nvim',
+        requires = 'tpope/vim-repeat'
+    }
+
+    -- Cheatsheet
+    use {
+        'sudormrfbin/cheatsheet.nvim',
+        requires = {
+            {'nvim-telescope/telescope.nvim'},
+            {'nvim-lua/popup.nvim'},
+            {'nvim-lua/plenary.nvim'},
+        }
+    }
+
 end)

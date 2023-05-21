@@ -1,15 +1,16 @@
-local status_ok, gitsigns = pcall(require, "gitsigns")
+local status_ok, gs = pcall(require, "gitsigns")
 if not status_ok then
     return
 end
 
-gitsigns.setup {
+gs.setup {
     signs = {
-    add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-    change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-    delete = { hl = "GitSignsDelete", text = "D", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-    topdelete = { hl = "GitSignsDelete", text = "D", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-    changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+    add          = { text = '│' },
+    change       = { text = '│' },
+    delete       = { text = '_' },
+    topdelete    = { text = '‾' },
+    changedelete = { text = '~' },
+    untracked    = { text = '┆' },
   },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -45,4 +46,15 @@ gitsigns.setup {
   yadm = {
     enable = false,
   },
+  on_attach = function(bufnr)
+      local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+      end
+
+      map('n', '<leader>hb', function() gs.blame_line{full=true} end)
+      map('n', '<leader>tb', gs.toggle_current_line_blame)
+  end
 }
+

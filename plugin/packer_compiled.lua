@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -83,6 +88,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
+  },
+  ["cheatsheet.nvim"] = {
+    loaded = true,
+    path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/cheatsheet.nvim",
+    url = "https://github.com/sudormrfbin/cheatsheet.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -129,6 +139,11 @@ _G.packer_plugins = {
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -158,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-hlslens"] = {
+    loaded = true,
+    path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/nvim-hlslens",
+    url = "https://github.com/kevinhwang91/nvim-hlslens"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -199,6 +219,11 @@ _G.packer_plugins = {
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
+  },
   ripgrep = {
     loaded = true,
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/ripgrep",
@@ -234,6 +259,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/simonvestergaardlaursen/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   }
 }
 

@@ -2,8 +2,6 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-require('cutface/cds_lsp')
-
 lsp.ensure_installed({
   'tsserver',
   -- 'sumneko_lua',
