@@ -24,11 +24,11 @@ else
     keymap("n", "<leader>pv", ":NvimTreeToggle<Enter>", opts)
 end
 
--- Note: I don't think I use these, maybe I should just remove them?
+-- Move text
 setmap("v", "J", ":m '>+1<CR>gv=gv")
 setmap("v", "K", ":m '<-2<CR>gv=gv")
 
--- Move text up and down
+-- Move text up and down (Not working with my current keyboard settings)
 keymap("n", "<leader>/j", "<Esc>:m .+1<CR>", opts)
 keymap("n", "<leader>/k", "<Esc>:m .-2<CR>", opts)
 
@@ -36,8 +36,8 @@ keymap("n", "<leader>/k", "<Esc>:m .-2<CR>", opts)
 setmap("n", "J", "mzJ`z")
 
 -- Fast navigate up/down
-setmap("n", "<C-u>", "<C-d>zz")
-setmap("n", "<C-d>", "<C-u>zz")
+setmap("n", "<C-u>", "<C-u>zz")
+setmap("n", "<C-d>", "<C-d>zz")
 
 setmap("n", "n", "nzzzv")
 setmap("n", "N", "Nzzzv")
@@ -46,10 +46,10 @@ setmap("n", "N", "Nzzzv")
 setmap("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-setmap({"n", "v"}, "<leader>y", [["+y]]) -- Yank block
-setmap("n", "<leader>Y", [["+Y]]) -- Yank entire line
+setmap({ "n", "v" }, "<leader>y", [["+y]]) -- Yank block
+setmap("n", "<leader>Y", [["+Y]])        -- Yank entire line
 
-setmap({"n", "v"}, "<leader>d", [["_d]])
+setmap({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 setmap("i", "<C-c>", "<Esc>")
@@ -76,3 +76,7 @@ setmap("n", "<C-k>", "<C-w>k") -- Move to above window
 -- Visual Block -> Move text up and down
 keymap("x", "J", ":m '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv-gv", opts)
+
+-- Buffer switching
+setmap("n", "<leader>bn", ":bnext<Enter>")
+setmap("n", "<leader>bp", ":bprevious<Enter>")

@@ -37,8 +37,10 @@ return require('packer').startup(function(use)
 
     -- Harpoon setup
     use('theprimeagen/harpoon')
+
     -- Undotree setup
     use('mbbill/undotree')
+
     -- VimFugitive setup
     use('tpope/vim-fugitive')
 
@@ -55,6 +57,7 @@ return require('packer').startup(function(use)
     }
 
     -- LSP -> lsp-zero setup
+    -- TODO: Stop using lsp-zero and set it up myself for a more lean setup
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -78,12 +81,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- ToggleTerm - Terminal for Neovim
-    use {
-        "akinsho/toggleterm.nvim",
-        tag = '*'
-    }
-
     use {
         'lewis6991/gitsigns.nvim',
         tag = 'release'
@@ -91,8 +88,6 @@ return require('packer').startup(function(use)
 
     -- Markdown previewer (Peek) (requires Deno)
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
-
-    --use("github/copilot.vim")
 
     -- TODO COMMENTS
     use {
@@ -113,20 +108,5 @@ return require('packer').startup(function(use)
     -- HLSLens
     use 'kevinhwang91/nvim-hlslens'
 
-    -- Leap movements
-    use {
-        'ggandor/leap.nvim',
-        requires = 'tpope/vim-repeat'
-    }
-
-    -- Cheatsheet
-    use {
-        'sudormrfbin/cheatsheet.nvim',
-        requires = {
-            {'nvim-telescope/telescope.nvim'},
-            {'nvim-lua/popup.nvim'},
-            {'nvim-lua/plenary.nvim'},
-        }
-    }
 
 end)
