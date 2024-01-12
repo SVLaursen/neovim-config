@@ -78,5 +78,5 @@ keymap("x", "J", ":m '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv-gv", opts)
 
 -- Buffer switching
-setmap("n", "<leader>bn", ":bnext<Enter>")
-setmap("n", "<leader>bp", ":bprevious<Enter>")
+setmap("n", "<leader>nb", ":bnext<Enter>")
+setmap("n", "<leader>pb", ":bprevious<Enter>")
