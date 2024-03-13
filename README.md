@@ -3,10 +3,7 @@
 ## TODO
 
 - [ ] Add DadBod
-- [ ] Configure DAP
-- [ ] Telescope Prompt for Actions
-- [ ] gpd
+- [x] Configure DAP
 - [ ] Add cheatsheet
 - [ ] Add 'desc' to all keymappings
 - [ ] Figure out a quick save shortcut
-- [ ] Fix silicon implementation

@@ -5,7 +5,7 @@ return {
 	config = function()
 		require("silicon").setup({
 			-- Configuration here, or leave empty to use defaults
-			font = "VictorMono NF=34;Noto Emoji=34",
+			font = "FiraCode Nerd Font=34;Noto Color Emoji=34",
 		})
 	end,
 }
