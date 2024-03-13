@@ -6,6 +6,11 @@ return {
 		gpd.setup()
 
 		-- keybindings
-		vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
+		vim.keymap.set(
+			"n",
+			"gp",
+			"<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+			{ desc = "Go to preview", noremap = true }
+		)
 	end,
 }

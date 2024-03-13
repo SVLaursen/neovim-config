@@ -9,7 +9,7 @@ return {
 
 		-- Custom keymappings
 		local keymap = vim.keymap
-		keymap.set("n", "<leader>qf", ":TodoQuickFix<Enter>")
-		keymap.set("n", "<leader>tl", ":TodoTelescope<Enter>")
+		keymap.set("n", "<leader>qf", ":TodoQuickFix<Enter>", { desc = "Quick Fix TODO" })
+		keymap.set("n", "<leader>tl", ":TodoTelescope<Enter>", { desc = "Open TODO View" })
 	end,
 }

@@ -27,7 +27,7 @@ return {
 		})
 
 		-- Commands
-		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-		vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, { desc = "Open Markdown preview" })
+		vim.api.nvim_create_user_command("PeekClose", require("peek").close, { desc = "Close Markdown preview" })
 	end,
 }

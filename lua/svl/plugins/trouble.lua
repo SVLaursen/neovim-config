@@ -8,7 +8,7 @@ return {
 
 		keymap.set("n", "<leader>xx", function()
 			trouble.toggle()
-		end)
+		end, { desc = "Toggle Trouble" })
 		keymap.set("n", "<leader>xw", function()
 			trouble.toggle("workspace_diagnostics")
 		end, { desc = "Show workspace trouble" })
