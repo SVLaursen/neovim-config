@@ -11,6 +11,19 @@ return {
 			-- import nvim-treesitter plugin
 			local treesitter = require("nvim-treesitter.configs")
 
+			-- CDS Custom Parser
+			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+			parser_config.cds = {
+				install_info = {
+					-- local path or git repo
+					url = "https://github.com/cap-js-community/tree-sitter-cds.git",
+					-- url = "/path/to/tree-sitter-cds",
+					branch = "main",
+					files = { "src/parser.c", "src/scanner.c" },
+				},
+				filetype = "cds", -- if filetype does not match the parser name
+			}
+
 			-- configure treesitter
 			treesitter.setup({ -- enable syntax highlighting
 				highlight = {

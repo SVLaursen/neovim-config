@@ -12,6 +12,23 @@ return {
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+		-- CDS LSP
+		local configs = require("lspconfig.configs")
+		if not configs.cds_lsp then
+			configs.cds_lsp = {
+				default_config = {
+					cmd = {
+						vim.fn.expand("cds-lsp"),
+						"--stdio",
+					},
+					filetypes = { "cds" },
+					root_dir = lspconfig.util.root_pattern(".git", "package.json"),
+					settings = {},
+				},
+			}
+		end
+
+		-- Mappings & attach
 		local keymap = vim.keymap -- for conciseness
 
 		local opts = { noremap = true, silent = true }
@@ -141,6 +158,11 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- TODO: Setup server for CDS
+		if lspconfig["cds_lsp"].setup then
+			lspconfig["cds_lsp"].setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+		end
 	end,
 }
