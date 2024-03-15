@@ -3,8 +3,7 @@ return {
 	event = { "VeryLazy" },
 	build = "deno task --quiet build:fast",
 	config = function()
-		local peek = require("peek")
-		peek.setup({
+		require("peek").setup({
 			auto_load = true, -- whether to automatically load preview when
 			-- entering another markdown buffer
 			close_on_bdelete = true, -- close preview window on buffer delete
@@ -27,7 +26,7 @@ return {
 		})
 
 		-- Commands
-		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, { desc = "Open Markdown preview" })
-		vim.api.nvim_create_user_command("PeekClose", require("peek").close, { desc = "Close Markdown preview" })
+		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+		vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 	end,
 }
