@@ -19,10 +19,10 @@ In order to use this configuration you'll need to following installed on your ma
 
 ## TODO
 
-- [ ] Clean up code structure
+- [x] Clean up code structure
 - [x] Add CDS LSP
 - [x] Configure DAP
-- [ ] Document how to setup the CDS LSP and TreeSitter
+- [x] Document how to setup the CDS LSP and TreeSitter
 - [ ] Obsidian integration
 - [ ] Re-introduce the 'vd' command for inspecting errors
-- [ ] Figure out why LSP servers configured by Mason are not included when attaching to buffer
+- [ ] Fix issue with Mason installs not being detected by lspconfig

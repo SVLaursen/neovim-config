@@ -31,6 +31,7 @@ return {
 				"pyright",
 				"gopls",
 				"rust_analyzer",
+				"jsonls",
 			},
 
 			-- auto-install configured servers (with lspconfig)

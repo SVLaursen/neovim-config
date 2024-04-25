@@ -17,7 +17,7 @@ return {
 				html = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
-				markdown = { "prettier" },
+				-- markdown = { "prettier" }, -- Disabled due to formatting Obsidian files incorrectly
 				graphql = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
