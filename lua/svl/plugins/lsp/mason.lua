@@ -32,6 +32,7 @@ return {
 				"gopls",
 				"rust_analyzer",
 				"jsonls",
+				"yamlls",
 			},
 
 			-- auto-install configured servers (with lspconfig)
