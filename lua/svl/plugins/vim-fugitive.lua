@@ -34,5 +34,6 @@ return {
 
 		-- Keymappings
 		vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Execute Git" })
+		vim.keymap.set("n", "<leader>bg", ":Git blame<cr>", { desc = "Git Blame" })
 	end,
 }

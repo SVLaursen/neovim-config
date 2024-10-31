@@ -21,8 +21,8 @@ In order to use this configuration you'll need to following installed on your ma
 
 - [x] Clean up code structure
 - [x] Add CDS LSP
-- [x] Configure DAP
 - [x] Document how to setup the CDS LSP and TreeSitter
-- [ ] Obsidian integration
+- [x] Obsidian integration
+- [ ] Configure DAP
 - [ ] Re-introduce the 'vd' command for inspecting errors
 - [ ] Fix issue with Mason installs not being detected by lspconfig

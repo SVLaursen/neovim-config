@@ -60,25 +60,27 @@ return {
 					error = "",
 				},
 			},
-			view = {
-				width = 30,
-				side = "left",
-				-- mappings = {
-				-- 	list = {
-				-- 		{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-				-- 		{ key = "h", cb = tree_cb("close_node") },
-				-- 		{ key = "v", cb = tree_cb("vsplit") },
-				-- 	},
-				-- },
-			},
+			-- view = {
+			-- 	width = 30,
+			-- 	side = "left",
+			-- mappings = {
+			-- 	list = {
+			-- 		{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+			-- 		{ key = "h", cb = tree_cb("close_node") },
+			-- 		{ key = "v", cb = tree_cb("vsplit") },
+			-- 	},
+			-- },
+			-- },
 		})
 
-		-- Shorthand
-		local keymap = vim.api.nvim_set_keymap
-		keymap("n", "<leader>pv", ":NvimTreeToggle<Enter>", {
+		-- set keymaps
+		local keymap = vim.keymap -- for conciseness
+
+		keymap.set("n", "<leader>pv", "<cmd>NvimTreeToggle<CR>", {
 			desc = "Open file tree",
 			noremap = true,
 			silent = true,
-		})
+		}) -- toggle file explorer
+		keymap.set("n", "<leader>pr", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
 	end,
 }
